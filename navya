@@ -1,0 +1,57 @@
+#include<stdio.h>
+#define SIZE 50
+void insert();
+void del();
+main()
+{
+	insert();
+	del();
+}
+void insert()
+{
+		
+	int arr[SIZE];   
+	int i,pos,len,ele;
+	scanf("%d",&len);
+	for(i=0;i<len;i++)
+		scanf("%d",&arr[i]);   
+
+	scanf("%d%d",&pos,&ele);  
+	
+	if(pos>=0&&pos<SIZE)
+	{
+		for(i=len;i>pos;i--)  
+			arr[i]=arr[i-1];
+		
+		arr[pos]=ele;  
+		len++;  
+		
+		for(i=0;i<len;i++)
+			printf("%d ",arr[i]);
+	}
+	else
+		printf("\nOutof Bounds");
+}
+void del()
+{
+	int arr[SIZE];
+	int pos,i,len;
+    scanf("\n%d",&len);
+    for(i=0;i<len;i++)
+{
+	scanf("%d",&arr[i]);
+}
+scanf("%d",&pos);
+if(pos>=0&&pos<len)
+for(i=0;i<len-1;i++)
+{
+	arr[i]=arr[i+1];
+	len--;
+	
+for(i=0;i<len;i++)
+printf("%d ",arr[i]);
+    
+}
+else
+printf("out of bounds");
+}
